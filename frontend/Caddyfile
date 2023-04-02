@@ -1,0 +1,9 @@
+{
+    admin off
+    auto_https off
+}
+
+http://10.7.0.103 {
+    root * ./www/
+    file_server
+}

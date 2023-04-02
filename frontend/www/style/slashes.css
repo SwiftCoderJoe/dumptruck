@@ -1,0 +1,186 @@
+.noMono {
+    font-family: 'Roboto' !important;
+}
+
+.squircle {
+    border-radius: 15px;
+}
+
+div.boxContainer {
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    gap: 5vw;
+
+    padding: 1.5vw 5vw;
+    padding-bottom: 4vw; /* This probably shouldn't exist, but smh */
+}
+
+div.box {
+    padding: 1.5vw;
+
+    border-radius: 15px;
+    box-shadow: -15px 15px 0 #000;
+}
+
+div.box-small {
+    padding: 0.5vw;
+
+    border-radius: 10px;
+    box-shadow: -10px 10px 0 #000;
+}
+
+div.box.gray {
+    background-color: #ddd;
+}
+
+div.divider {
+    height: 1px;
+    margin: 1vw 10%;
+    padding: 0;
+
+    background-color: #555;
+}
+
+.betterPicker {
+    border-radius: 10px;
+    box-shadow: -5px 5px black;
+
+    font-size: 1.25vw;
+
+    background-color: white;
+
+    padding: 5px;
+
+    margin: 0px 10px;
+}
+
+/* Custom UI element styling*/
+
+a.buttonLink {
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    color: #000;
+
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+
+    padding: 0.5vw;
+
+    background-color: #fff;
+
+    cursor: pointer;
+
+    transition: all 200ms;
+
+    border-radius: 10px;
+    box-shadow: -10px 10px black;
+}
+
+a.buttonLink.gray {
+    background-color: #ccc;
+}
+
+a.buttonLink:hover {
+    background-color: #eee;
+    box-shadow: -5px 5px black;
+}
+
+.inoperable-geometry {
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+
+/* FOR REFERENCE:
+
+9vw horizontal padding for wide elements
+25vw for slimmer ones
+
+1.5vw vertical on most divs
+
+1.5vw padding for most things in boxes
+
+*/
+
+/****** FOR TOASTS */
+
+#toastContainer {
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+}
+
+.toast {
+    font-family: 'Roboto Mono', monospace;
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: -125px; 
+    background-color: #333; 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 15px; 
+    padding: 16px; 
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+}
+    
+.toast.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s forwards;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s forwards;
+}
+    
+/* Animations to fade the toast in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+    
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+    
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+    
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+} 
+
+@media (max-width: 800px) {
+    a.buttonLink {
+        box-shadow: -5px 5px black;
+    }
+
+    div.box {
+        padding: 3vw;
+    }
+
+    .iconTitleText {
+        grid: "a b" 6vw
+              "end end" 1fr / 6vw 1fr;
+    
+        gap: 1vw;
+    }
+
+    .iconTitleText > img {
+        display: block;
+        margin: auto;
+        /* this is slightly larger than 7 because i think it looks nice deal with it */
+        height: 6vw;
+    }
+
+    div.boxContainer {
+        grid: min-content min-content / 1fr;
+
+        padding: 5vw 9vw;
+    }
+}

@@ -1,0 +1,224 @@
+/* Sane Defaults */
+* {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    margin: 0px;
+}
+
+div {
+    padding: 2vw 0px;
+}
+
+/* Unified text size */
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10vw;
+}
+
+
+h1.smaller {
+    font-size: 5vw;
+}
+
+h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 5vw;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4vw;
+    text-align: left;
+}
+
+a {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2vw;
+    text-align: left;
+}
+
+a.smaller {
+    font-size: 1vw;
+}
+
+p {
+    font-size: 2vw;
+    font-family: 'Roboto';
+    text-align: left;
+}
+
+p.smaller {
+    font-size: 1.5vw;
+}
+
+img {
+    object-fit: cover;
+    object-position: top;
+}
+
+.vStack {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-self-stretch {
+    align-self: stretch;
+}
+
+.gap-2 {
+    gap: 2vw;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-5px {
+    padding: 5px;
+}
+
+.p-10px {
+    padding: 10px;
+}
+
+.xp-10 {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.xp-15 {
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+.hStack {
+    display: flex;
+    flex-direction: row;
+}
+
+.height-25 {
+    height: 25vw;
+}
+
+.square {
+    aspect-ratio: 1/1;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.hGrid {
+    display: grid;
+    grid: 1fr / auto-flow 1fr
+
+}
+
+.bg-white {
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-good {
+    background-color: rgba(51, 153, 0, 0.1);
+}
+
+.bg-warn {
+    background-color: rgba(255, 204, 0, 0.1);
+}
+
+.bg-bad {
+    background-color: rgba(176, 0, 32, 0.1);
+}
+
+.opaque.bg-good {
+    background-color: rgb(51, 153, 0);
+}
+
+.opaque.bg-warn {
+    background-color: rgba(255, 204, 0);
+}
+
+.opaque.bg-bad {
+    background-color: rgb(176, 0, 32);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* EVIL!! */
+
+Spacer {
+    flex-grow: 1;
+}
+
+Line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+@media (max-width: 800px) {
+    div {
+        padding: 5vw 0px;
+    }
+
+    h1 {
+        font-size: 12vw;
+    }
+
+    h1.smaller {
+        font-size: 5vw;
+    }
+
+    h2 {
+        font-size: 8vw;
+    }
+
+    h3 {
+        font-size: 7vw;
+    }
+
+    a {
+        font-size: 5vw;
+    }
+
+    p, a.smaller {
+        font-size: 3.5vw;
+    }
+
+    .mobile-vStack {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-xp-9 {
+        padding-left: 9vw;
+        padding-right: 9vw;
+    }
+
+    .mobile-height-4 {
+        height: 4vw;
+    }
+
+    .mobile-height-50 {
+        height: 50vw;
+    }
+}
+
+@media (min-width: 801px) {
+    .desktop-p-0 {
+        padding: 0;
+    }
+}

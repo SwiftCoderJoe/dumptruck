@@ -1,0 +1,31 @@
+{
+  "plants": [
+    {
+      "schedule": {
+        "FEED": "0",
+        "PHUP": "0",
+        "PHDN": "0"
+      },
+      "phHistory": {}
+    },
+    {
+      "schedule": {
+        "FEED": "0",
+        "PHUP": "0",
+        "PHDN": "0"
+      },
+      "phHistory": {}
+    },
+    {
+      "schedule": {
+        "FEED": "d1",
+        "PHUP": "0",
+        "PHDN": "0"
+      },
+      "phHistory": {
+        "t1673032961773": "870"
+      },
+      "recentpH": "870"
+    }
+  ]
+}

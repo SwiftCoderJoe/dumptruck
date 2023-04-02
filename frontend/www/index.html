@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The Dumptruck</title>
+
+        <!-- META -->
+        <meta name="author" content="Joe Cardenas">
+        <meta name="description" content="Joe's Portfolio">
+        <meta name="keywords" content="portfolio">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet"> 
+
+        <!-- STANDARDIZED STYLE -->
+        <link rel="stylesheet" href="./style/global.css">
+        <link rel="stylesheet" href="./style/globalNav.css">
+        <link rel="stylesheet" href="./style/slashes.css">
+
+        <!-- CUSTOM STYLE -->
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <!-- SCRIPTS -->
+        <script src="api.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <a class="leftSide">Dashboard</a>
+            <div></div> <!-- EVIL SPACER -->
+            <!-- <a href="../home/home.html">Home</a>
+            <a href="../projects/projects.html">Projects</a>
+            <a href="../skills/skills.html">Skills</a>
+            <a href="../links/links.html">Links</a> -->
+        </nav>
+
+        <div class="hGrid gap-2 xp-10">
+            <div class="box" id="plant0">
+                <h3>Plant 1</h3>
+                <p>Status: <span class="p-5px squircle opaque">Loading...</span></p>
+                <div class="p-10px"></div>
+
+                <Line></Line>
+                <p>Quick Actions:</p>
+
+                <div class="hGrid p-5px">
+                    <a class="buttonLink" onclick="phupPlant(0)">
+                        pH Up
+                    </a>
+                    <a class="buttonLink" onclick="toast(`Not Implemented`)">
+                        pH Down
+                    </a>
+                </div>
+                <div class="hGrid p-5px">
+                    <a class="buttonLink" onclick="feedPlant(0)">
+                        Feed
+                    </a>
+                </div>
+
+                <div class="p-10px"></div>
+                <Line></Line>
+                <p>Schedule:</p>
+                <div class="p-0 inoperable-geometry" id="plant0Schedule">
+                    <div class="p-5px">
+                        <p class="smaller">Feed <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(0, 0)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(0, 0)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+    
+                    <div class="p-5px">
+                        <p class="smaller">pH Up <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(0, 1)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(0, 1)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option> 
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="p-5px">
+                        <p class="smaller">pH Down <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(0, 2)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(0, 2)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <a class="buttonLink" onclick="setSchedule(0)">Apply</a>
+
+                </div>
+
+
+            </div>
+
+            <div class="box" id="plant1">
+                <h3>Plant 2</h3>
+                <p>Status: <span class="p-5px squircle opaque">Loading...</span></p>
+                <div class="p-10px"></div>
+                <Line></Line>
+                <p>Quick Actions:</p>
+
+                <div class="hGrid p-5px">
+                    <a class="buttonLink" onclick="phupPlant(1)">
+                        pH Up
+                    </a>
+                    <a class="buttonLink" onclick="toast(`Not Implemented`)">
+                        pH Down
+                    </a>
+                </div>
+                <div class="hGrid p-5px">
+                    <a class="buttonLink" onclick="feedPlant(1)">
+                        Feed
+                    </a>
+                </div>
+
+                <div class="p-10px"></div>
+                <Line></Line>
+                <p>Schedule:</p>
+                <div class="p-0 inoperable-geometry" id="plant1Schedule">
+                    <div class="p-5px">
+                        <p class="smaller">Feed <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(1, 0)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(1, 0)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+    
+                    <div class="p-5px">
+                        <p class="smaller">pH Up <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(1, 1)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(1, 1)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option> 
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="p-5px">
+                        <p class="smaller">pH Down <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(1, 2)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(1, 2)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <a class="buttonLink" onclick="setSchedule(1)">Apply</a>
+
+                </div>
+            </div>
+
+            <div class="box" id="plant2">
+                <h3>Plant 3</h3>
+                <p>Status: <span class="p-5px squircle opaque">Loading...</span></p>
+                <div class="p-10px"></div>
+                <Line></Line>
+                <p>Quick Actions:</p>
+
+                <div class="hGrid p-5px">
+                    <a class="buttonLink" onclick="phupPlant(2)">
+                        pH Up
+                    </a>
+                    <a class="buttonLink" onclick="toast(`Not Implemented`)">
+                        pH Down
+                    </a>
+                </div>
+                <div class="hGrid p-5px">
+                    <a class="buttonLink" onclick="feedPlant(2)">
+                        Feed
+                    </a>
+                </div>
+
+                <div class="p-10px"></div>
+                <Line></Line>
+                <p>Schedule:</p>
+                <div class="p-0 inoperable-geometry" id="plant2Schedule">
+                    <div class="p-5px">
+                        <p class="smaller">Feed <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(2, 0)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(2, 0)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+    
+                    <div class="p-5px">
+                        <p class="smaller">pH Up <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(2, 1)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(2, 1)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option> 
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="p-5px">
+                        <p class="smaller">pH Down <span>every Loading...</span></p>
+                        <div class="hStack p-0">
+                            <input name="amount" type="range" oninput="valueChanged(1, 2)">
+                            <select class="betterPicker" name="unit" oninput="valueChanged(1, 2)">
+                                <option value="m">Minutes</option>
+                                <option value="h">Hours</option>
+                                <option value="d">Days</option>
+                                <option value="0">Never</option>
+                                <option value="loading" selected hidden>Loading...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <a class="buttonLink" onclick="setSchedule(2)">Apply</a>
+
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center">Warning: applying a plant's schedule will reset schedule timers.</p>
+
+        <div id="toastContainer"></div>
+
+        <!-- <footer>
+            <div>
+                <h2>JC</h2>
+            </div>
+            <div>
+                <a href="../home/home.html">Dashboard</a>
+                <a href="../projects/projects.html">Projects</a>
+                <a href="../skills/skills.html">Skills</a>
+                <a href="../links/links.html">Links</a>
+            </div>
+            <div>
+                <p>Hosted with ♥ by OxygenHosting</p>
+                <a class="noMono smaller" href="https://www.flaticon.com/authors/freepik">Icons created by Freepik</a>
+            </div>
+        </footer> -->
+    </body>
+</html>
+
+<!--
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+-->
