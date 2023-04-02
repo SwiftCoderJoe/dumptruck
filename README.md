@@ -2,7 +2,7 @@
 
 The Dumptruck is a ridiculously overengineered robot designed to feed plants on a schedule and measure their pH values. It presents this data in an easy-to-use web format that is modeled after [my own portfolio](https://joecardenas.dev/). 
 
-## The Frontend
+## Frontend
 
 The frontend is a simple plain HTML/CSS/JS website located in `frontend` served through [Caddy](https://caddyserver.com/). It communicates to an API hosted on a local network by the same machine that hosts the server. It includes simple elements to change the schedule of feeding and providing pH Up and pH Down chemicals. It also displays recent pH measurement data as provided by the API and subtly changes the backgrounds of each plant to reflect their current pH status.
 
